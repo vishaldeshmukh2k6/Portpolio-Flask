@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Me{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .contact-section {
+    margin-top: 40px;
+  }
+
+  .form-box, .info-box {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    height: 100%;
+  }
+
+  .form-box h2, .info-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .form-control {
+    background: rgba(0, 0, 0, 0.03);
+    color: #000;
+    border: 1px solid #ccc;
+  }
+
+  .form-control::placeholder {
+    color: #666;
+  }
+
+  .form-control:focus {
+    background: rgba(0, 0, 0, 0.05);
+    color: #000;
+    box-shadow: none;
+  }
+
+  .btn-glow {
+    width: 100%;
+    background: #0dcaf0;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-glow:hover {
+    background: #00bcd4;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00bcd4;
+  }
+
+  .info-box h5 {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  a {
+    color: #0dcaf0;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Fade-in animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.9s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.4s; }
+  .delay-3 { animation-delay: 0.6s; }
+</style>
+
+<div class="container contact-section fade-in delay-1">
+  <div class="row justify-content-center g-4">
+
+    <!-- Message Form Box -->
+    <div class="col-md-7 fade-in delay-2">
+      <div class="form-box">
+        <h2>Let's Connect!</h2>
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">👤 Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Your Full Name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="title" class="form-label">📌 Subject</label>
+            <input type="text" class="form-control" id="title" placeholder="Subject" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">✉️ Message</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Write your message..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-glow">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Contact Info Box -->
+    <div class="col-md-5 fade-in delay-3">
+      <div class="info-box">
+        <h2>📞 Contact Info</h2>
+
+        <h5>📱 Phone</h5>
+        <p><a href="tel:+918830863219">+91 8830863219</a></p>
+
+        <h5>📧 Email</h5>
+        <p><a href="mailto:vishaldeshmuk143@gmail.com">vishaldeshmuk143@gmail.com</a></p>
+
+        <h5>📍 Location</h5>
+        <p>Lobhi, Tumsar, Maharashtra, India</p>
+
+        <div style="border-radius: 12px; overflow: hidden; margin-top: 15px;">
+          <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5975.432!2d79.70621!3d21.57428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1718000000000"
+              width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

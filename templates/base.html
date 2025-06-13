@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}My Portfolio{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    .hero {
+      background-color: #f8f9fa;
+      padding: 100px 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('home') }}">MyPortfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'home' %}active{% endif %}" href="{{ url_for('home') }}">Home</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'about' %}active{% endif %}" href="{{ url_for('about') }}">About</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'project' %}active{% endif %}" href="{{ url_for('project') }}">Projects</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'team' %}active{% endif %}" href="{{ url_for('team') }}">Team</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}" href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    {% block content %}{% endblock %}
+  </div>
+
+  <footer class="text-center text-lg-start bg-light text-muted mt-5">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Vishal Deshmukh</h6>
+          <p>Python Developer passionate about building web apps using Flask & SQLAlchemy. Always curious to learn and grow.</p>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Quick Links</h6>
+          <p><a href="{{ url_for('home') }}" class="text-reset">Home</a></p>
+          <p><a href="{{ url_for('about') }}" class="text-reset">About</a></p>
+          <p><a href="{{ url_for('project') }}" class="text-reset">Projects</a></p>
+          <p><a href="{{ url_for('team') }}" class="text-reset">Team</a></p>
+          <p><a href="{{ url_for('contact') }}" class="text-reset">Contact</a></p>
+        </div>
+
+        <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Bhandara, Maharashtra</p>
+          <p><i class="fas fa-envelope me-3"></i> vishaldeshmuk143@gmail.com</p>
+          <p><i class="fas fa-phone me-3"></i> +91 8830863219</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center p-3" style="background-color: #f1f1f1;">
+      © 2025 Vishal Deshmukh. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

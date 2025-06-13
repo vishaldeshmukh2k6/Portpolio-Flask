@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- 🌐 Loading Spinner -->
+<div id="loader-wrapper">
+  <div id="loader"></div>
+</div>
+
+<style>
+  /* Loader Style */
+  #loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #0d6efd;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Hero animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-animate h1 { animation-delay: 0.2s; }
+  .hero-animate p { animation-delay: 0.6s; }
+  .hero-animate a { animation-delay: 1s; }
+
+  .hero-btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 500;
+  }
+
+  .hero-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(13, 202, 240, 0.4);
+  }
+
+  /* Hero section */
+  .hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #0d6efd;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  /* Social section */
+  .social-card {
+    max-width: 500px;
+    border-radius: 15px;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    animation: floatIn 1.2s ease-in-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  @keyframes floatIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .social-icon {
+    text-align: center;
+    color: #0dcaf0;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .social-icon:hover {
+    color: #0a58ca;
+    transform: scale(1.15);
+  }
+
+  .social-icon span {
+    font-weight: 600;
+  }
+</style>
+
+<!-- ✨ Hero Section -->
+<section class="hero text-center py-5 hero-animate">
+  <div class="container">
+    <h1 class="fade-in">Hello, I'm Vishal </h1>
+    <p class="lead fade-in">Aspiring Python Developer | Skilled in Flask, MySQL & Web Technologies</p>
+    <a href="{{ url_for('project') }}" class="btn btn-primary mt-3 fade-in hero-btn">View My Projects</a>
+  </div>
+</section>
+
+<!-- 🔗 Social Links -->
+<section class="social-section fade-in">
+  <div class="container d-flex justify-content-center mt-5 mb-5">
+    <div class="card p-4 shadow-lg social-card">
+      <h3 class="text-center mb-4">🔗 Connect with Me</h3>
+      <div class="d-flex justify-content-center gap-4 flex-wrap">
+        <a href="https://www.linkedin.com/in/coder2024" target="_blank" class="social-icon" title="LinkedIn">
+          <i class="fab fa-linkedin fa-2x"></i>
+          <span class="d-block mt-1">LinkedIn</span>
+        </a>
+        <a href="https://github.com/vishaldeshmukh143" target="_blank" class="social-icon" title="GitHub">
+          <i class="fab fa-github fa-2x"></i>
+          <span class="d-block mt-1">GitHub</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 👇 JS to Hide Loader -->
+<script>
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("loader-wrapper");
+    loader.style.opacity = "0";
+    loader.style.visibility = "hidden";
+    loader.style.transition = "opacity 0.5s ease";
+  });
+</script>
+
+{% endblock %}

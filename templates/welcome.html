@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}
+Welcome
+{% endblock %}
+
+{% block content %}
+  <div class="text-center mt-5">
+    <h1>Welcome to My Portfolio!</h1>
+    <p class="lead mt-3">I'm glad you're here. Explore my projects, learn more about me, and feel free to get in touch!</p>
+    <a href="{{ url_for('project') }}" class="btn btn-success mt-4">See My Projects</a>
+  </div>
+{% endblock %}

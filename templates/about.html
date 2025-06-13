@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}
+  About Me
+{% endblock %}
+
+{% block content %}
+<style>
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.6s; }
+  .delay-3 { animation-delay: 1s; }
+
+  .about-section {
+    margin-top: 40px;
+  }
+
+  .about-photo {
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .about-photo:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 0 25px rgba(13, 202, 240, 0.6);
+  }
+
+  .skills-section {
+    margin-top: 60px;
+  }
+
+  .skill-link {
+    text-decoration: none;
+  }
+
+  .skill-box {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: #000;
+  }
+
+  .skill-box:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(13, 202, 240, 0.4);
+    background: #e3f7fc;
+    color: #0dcaf0;
+  }
+
+  .dark-mode .skill-box {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+  }
+
+  .dark-mode .skill-box:hover {
+    background-color: #2c2c2c;
+    color: #0dcaf0;
+  }
+</style>
+
+<!-- About Section -->
+<div class="row align-items-center about-section">
+  <div class="col-md-4 text-center">
+    <img 
+      src="{{ url_for('static', filename='images/Vishal.jpeg') }}" 
+      alt="Vishal Deshmukh" 
+      class="img-fluid fade-in delay-1 about-photo"
+      style="margin-top: 10px;"
+    >
+  </div>
+
+  <div class="col-md-8 fade-in delay-2">
+    <h2 class="mb-4 display-6">About Me</h2>
+    <p class="fs-5">
+      Hi, I'm <strong>Vishal Deshmukh</strong> from a small village in Bhandara district, Maharashtra. I recently completed my 12th in 2024 and have a strong knowledge of Python programming.
+    </p>
+    <p class="fs-5">
+      I'm currently a student at <strong><a href="https://www.navgurukul.org/" target="_blank">NavGurukul</a></strong>, where I joined 6 months ago to pursue Web Development. NavGurukul is a non-profit organization that provides free residential coding education to underprivileged students across India. I am learning full-stack development here, focusing on backend technologies like Flask, databases, and building complete web applications.
+    </p>
+    <p class="fs-5">
+      I enjoy problem-solving, developing web projects, and am actively preparing to become a professional backend developer.
+    </p>
+  </div>
+</div>
+
+<!-- Skills Section -->
+<div class="skills-section fade-in delay-3">
+  <h3 class="text-center my-4"> My Skills</h3>
+  <div class="row justify-content-center">
+
+    <!-- Skill Cards with Links -->
+    {% set skills = [
+      ('Python', 'https://www.python.org'),
+      ('Flask', 'https://flask.palletsprojects.com/'),
+      ('BeautifulSoup', 'https://www.crummy.com/software/BeautifulSoup/'),
+      ('NumPy', 'https://numpy.org/'),
+      ('Pandas', 'https://pandas.pydata.org/'),
+      ('MySQL', 'https://www.mysql.com/'),
+      ('HTML', 'https://developer.mozilla.org/en-US/docs/Web/HTML'),
+      ('CSS', 'https://developer.mozilla.org/en-US/docs/Web/CSS'),
+      ('Basic JavaScript', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'),
+      ('Jupyter Notebook', 'https://jupyter.org/')
+    ] %}
+
+    {% for skill, link in skills %}
+    <div class="col-md-3 col-sm-4 col-6">
+      <a href="{{ link }}" class="skill-link" target="_blank">
+        <div class="skill-box">{{ skill }}</div>
+      </a>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+{% endblock %}

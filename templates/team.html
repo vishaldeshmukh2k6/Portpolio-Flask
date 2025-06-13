@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}Team{% endblock %}
+
+{% block content %}
+<style>
+  .team-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    background: #ffffff;
+    height: 100%;
+  }
+
+  .team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(13, 110, 253, 0.2);
+  }
+
+  .team-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .team-card img {
+    object-fit: cover;
+    border: 3px solid #0d6efd;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .social-icons a {
+    color: #0d6efd;
+    font-size: 1.4rem;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0a58ca;
+    transform: scale(1.2);
+  }
+</style>
+
+<section class="team-section fade-in">
+  <div class="container py-5">
+    <h2 class="text-center mb-5 text-primary fw-bold">Our Awesome Team</h2>
+    <div class="row justify-content-center gy-4">
+
+      <!-- Vishal -->
+      <div class="col-md-4 col-sm-6 d-flex">
+        <div class="card team-card shadow text-center p-3 w-100">
+          <img src="{{ url_for('static', filename='images/Vishal.jpeg') }}" class="rounded-circle mx-auto mb-3" width="120" height="120" alt="Vishal">
+          <h5 class="fw-bold mb-0">Vishal Deshmukh</h5>
+          <p class="text-muted mb-1">Backend Developer</p>
+          <p class="small">Loves Flask, MySQL, clean code & team collaboration.</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/coder2024" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/vishaldeshmukh2k6" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tikaram -->
+      <div class="col-md-4 col-sm-6 d-flex">
+        <div class="card team-card shadow text-center p-3 w-100">
+          <img src="{{ url_for('static', filename='images/tikaram.jpeg') }}" class="rounded-circle mx-auto mb-3" width="120" height="120" alt="Tikaram">
+          <h5 class="fw-bold mb-0">Tikaram Gahane</h5>
+          <p class="text-muted mb-1">Frontend Developer</p>
+          <p class="small">Skilled in Python, HTML, CSS, and JavaScript. Passionate about UI & interactivity.</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/tikaram-gahane-1804bb343/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/tikaramgahane2k4" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 d-flex">
+        <div class="card team-card shadow text-center p-3 w-100">
+          <img src="{{ url_for('static', filename='images/pratik.jpeg') }}" class="rounded-circle mx-auto mb-3" width="120" height="120" alt="Vishal">
+          <h5 class="fw-bold mb-0">Pratik Deshmukh</h5>
+          <p class="text-muted mb-1">Full-Stack Developer</p>
+          <p class="mb-1"><strong>Company:</strong> Bitwise India</p>
+          <p class="mb-1"><strong>Experience:</strong> 5 Years</p>
+          <p class="small">Skilled in Python and JavaScript. Experienced with Node.js, Express.js, React.js, JWT, ORM, Knex.js, Passport.js, and Material-UI.</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/pratik-coder/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/pratikdeshmukh2004" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 d-flex">
+        <div class="card team-card shadow text-center p-3 w-100">
+          <img src="{{ url_for('static', filename='images/bhupendra.jpeg') }}" class="rounded-circle mx-auto mb-3" width="120" height="120" alt="Vishal">
+          <h5 class="fw-bold mb-0">Bhupendra Deshmukh</h5>
+          <p class="text-muted mb-1">Backend Developer</p>
+          <p class="mb-1"><strong>Company:</strong> NavGurukul </p>
+          <p class="mb-1"><strong>Experience:</strong> 2 Years</p>
+          <p class="small">Proficient in HTML, CSS, JavaScript, Node.js, MongoDB, and React.js. Skilled in building full-stack web applications with responsive and interactive UIs.</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/bhupendra-deshmukh-7a157621b/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/bhupend-deshmukh" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 d-flex">
+        <div class="card team-card shadow text-center p-3 w-100">
+          <img src="{{ url_for('static', filename='images/sohan.jpeg') }}" class="rounded-circle mx-auto mb-3" width="120" height="120" alt="Vishal">
+          <h5 class="fw-bold mb-0">Sohan Vishwas</h5>
+          <p class="text-muted mb-1">Software Developer</p>
+          <p class="mb-1"><strong>Company:</strong> NavGurukul</p>
+          <p class="mb-1"><strong>Experience:</strong> 1 Years</p>
+          <p class="small">Software Developer || C || Python || HTML || CSS || JavaScript || Good Communicator || Strong Leadership Qualities || Node.js || React.js</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/sohan-vishwas-455451301/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Projects
+{% endblock %}
+
+{% block content %}
+<style>
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.4s; }
+  .delay-3 { animation-delay: 0.6s; }
+  .delay-4 { animation-delay: 0.8s; }
+  .delay-5 { animation-delay: 1s; }
+  .delay-6 { animation-delay: 1.2s; }
+
+  .project-card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+</style>
+
+<div class="container py-5">
+  <h2 class="mb-5 text-center fw-bold fade-in delay-1">My Projects</h2>
+
+  <div class="row justify-content-center g-4">
+
+    <div class="col-md-6 col-lg-5 fade-in delay-1">
+      <div class="card shadow border-0 mb-4 project-card h-100">
+        <div class="card-body">
+          <h4 class="card-title text-primary fw-bold">📝 Coders Blog App</h4>
+          <p class="card-text">
+            A full-featured blog built with Flask. Includes admin panel, user login, secure authentication, and database migration using SQLAlchemy and Flask extensions.
+          </p>
+          <a href="https://github.com/vishaldeshmukh2k6/Coders-Blog-App" target="_blank" class="btn btn-outline-primary">
+            🔗 View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-5 fade-in delay-2">
+      <div class="card shadow border-0 mb-4 project-card h-100">
+        <div class="card-body">
+          <h4 class="card-title text-success fw-bold">🎬 IMDB Web Scraping</h4>
+          <p class="card-text">
+            Scraped top movies from IMDB using Python’s BeautifulSoup and Requests. Collected and stored movie data like title, year, and rating in JSON format.
+          </p>
+          <a href="https://github.com/vishaldeshmukh2k6/IMDB-web-scrapping" target="_blank" class="btn btn-outline-success">
+            🔗 View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-5 fade-in delay-3">
+      <div class="card shadow border-0 mb-4 project-card h-100">
+        <div class="card-body">
+          <h4 class="card-title text-primary fw-bold">📚 Books Scraper</h4>
+          <p class="card-text">
+            Extracted book details like title, category, release year, and price from an online books website using Python, BeautifulSoup, and Requests. Stored data in JSON format.
+          </p>
+          <a href="https://github.com/vishaldeshmukh2k6/books-scarps" target="_blank" class="btn btn-outline-primary">
+            🔗 View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-5 fade-in delay-4">
+      <div class="card shadow border-0 mb-4 project-card h-100">
+        <div class="card-body">
+          <h4 class="card-title text-warning fw-bold">🧮 Calculator</h4>
+          <p class="card-text">
+            A simple Python calculator that performs basic arithmetic operations. Developed as a beginner project to strengthen logic-building skills.
+          </p>
+          <a href="https://github.com/vishaldeshmukh2k6/calculator" target="_blank" class="btn btn-outline-warning">
+            🔗 View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-5 fade-in delay-5">
+      <div class="card shadow border-0 mb-4 project-card h-100">
+        <div class="card-body">
+          <h4 class="card-title text-dark fw-bold">🐙 GitHub API Project</h4>
+          <p class="card-text">
+            Used GitHub’s public API to fetch and display repository data like name, stars, forks, and more. A mini-tool built with Python for GitHub developers.
+          </p>
+          <a href="https://github.com/vishaldeshmukh2k6/PROJECTS/blob/main/Github-API.py" target="_blank" class="btn btn-outline-dark">
+            🔗 View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-5 fade-in delay-6">
+      <div class="card shadow border-0 mb-4 project-card h-100">
+        <div class="card-body">
+          <h4 class="card-title text-danger fw-bold">🏧 ATM Machine Simulation</h4>
+          <p class="card-text">
+            Command-line ATM simulator in Python. Supports withdrawal, deposit, and balance check with simple authentication system.
+          </p>
+          <a href="https://github.com/vishaldeshmukh2k6/ATM" target="_blank" class="btn btn-outline-danger">
+            🔗 View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
